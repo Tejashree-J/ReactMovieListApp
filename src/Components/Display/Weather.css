@@ -1,0 +1,29 @@
+.weather {
+    width: 380px;
+    height: 130px;
+    background: #101744;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+}
+.dateTime{
+    background: #FF4ADE;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .weatherData{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:30px 0 0 30px;
+  }
+  .icon{
+    width: 20px;
+    height: 20px;
+
+  }

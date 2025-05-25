@@ -1,0 +1,48 @@
+#moviePage {
+    display: flex;
+    margin: 35px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.leftMovieContent {
+    width: 50%;
+}
+
+.leftMovieContent h1 {
+    font-size: 45px;
+    font-weight: 700;
+    width: 55%;
+    margin: 35px 0;
+    letter-spacing: 1.3px;
+}
+
+.rightMovieContent {
+    width: 50%;
+    margin-right: 50px
+}
+
+img {
+    width: 140px;
+    height: 110px;
+}
+
+.warning {
+    display: block;
+    color: red;
+}
+
+.nextBtn {
+    float: right;
+    margin: 0 5% 2%;
+}
+
+.nextBtn button {
+    background: green;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100px;
+    border: none;
+    color: #fff;
+}

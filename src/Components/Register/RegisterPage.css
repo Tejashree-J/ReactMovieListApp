@@ -1,0 +1,115 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.left-content {
+    width: 40%
+}
+
+.right-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+}
+
+.left-content img {
+    width: 100%;
+    height: 100vh
+}
+
+.left-content h2 {
+    position: absolute;
+    bottom: 15%;
+    left: 60px;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 50px;
+    font-family: "Roboto", sans-serif;
+}
+
+.right-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+.appTitle {
+    font-family: 'Single Day', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #72DB73;
+}
+
+form p {
+    margin: 5px auto 25px;
+    font-size: 18px;
+    font-family: "DM Sans", sans-serif;
+}
+
+form input {
+    background: #292929;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 400px;
+    border: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    border-radius: 3px;
+    color: white;
+}
+
+.checkbox {
+    display: flex;
+    margin-left: 24%;
+}
+
+.checkbox p {
+    padding: 5px 10px;
+    color: #7C7C7C;
+    font-size: 16px;
+    font-family: "DM Sans", sans-serif;
+}
+
+.right-content h6 {
+    color: red;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+    margin-bottom: 5px;
+}
+
+.right-content button {
+    background-color: #72DB73;
+    border: none;
+    border-radius: 50px;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 35%;
+    color: white;
+    margin: 15px auto;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.terms {
+    color: #7C7C7C;
+    text-align: left;
+    font-size: 14px;
+    margin: 10px 24%;
+    line-height: 24px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+}
+
+.terms span {
+    color: #72DB73;
+}
