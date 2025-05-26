@@ -12,15 +12,15 @@ export default function Notes() {
       className="notes"
       style={{
         margin: "10px",
-        padding:"15px",
-        maxWidth: "21vw", 
+        padding: "15px",
+        maxWidth: "21vw",
         maxHeight: "350px",
         height: "350px",
         width: "21vw",
         background: "#F1C75B",
         color: "#000",
         fontFamily: "Roboto",
-        borderRadius:"20px"
+        borderRadius: "20px",
       }}
     >
       <h1>Notes</h1>
@@ -33,7 +33,7 @@ export default function Notes() {
           border: "none",
           background: "#F1C75B",
           marginLeft: "5px",
-          color:"#000"
+          color: "#000",
         }}
       >
         The notes will go here

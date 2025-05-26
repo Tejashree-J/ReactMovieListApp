@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Register/RegisterPage.css";
+import image1Home from "../../assets/image1Home.png";
 
 function RegisterForm() {
   const [formValues, setFormValues] = useState({
@@ -66,7 +67,7 @@ function RegisterForm() {
   return (
     <div className="container" id="homePage">
       <div className="left-content">
-        <img src="src/assets/image1Home.png" alt="Home page " />
+        <img src={image1Home} alt="Home page " />
         <h2>
           Discover new things on <br />
           Superapp
