@@ -8,7 +8,7 @@ import Display from "./Pages/Display";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ReactMovieListApp/">
       <Routes>
         <Route path="/" element={<Register />} />
         <Route path="/movies" element={<Movies />} />
