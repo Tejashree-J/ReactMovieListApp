@@ -8,8 +8,8 @@ import Weather from "../Components/Display/Weather";
 function Display() {
   const navigate = useNavigate();
 
-  function handleClick(){
-    navigate("/browse")
+  function handleClick() {
+    navigate("/browse");
   }
 
   return (
@@ -38,8 +38,9 @@ function Display() {
           fontSize: "16px",
           fontFamily: "DM Sans",
         }}
-       onClick={handleClick}
+        onClick={handleClick}
       >
+        {" "}
         Browse
       </button>
     </div>

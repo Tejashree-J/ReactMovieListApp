@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import "./Timer.css";
+import "../Display/Timer.css";
 
 const TimePickerTimer = () => {
   const [hours, setHours] = useState(0);
