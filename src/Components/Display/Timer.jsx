@@ -1,71 +1,80 @@
+
 import React, { useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import "../Display/Timer.css";
+import "./Timer.css";
 
-export default function Timer() {
+const TimePickerTimer = () => {
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [totalSeconds, setTotalSeconds] = useState(0);
+
+  const getTotalTime = () => hours * 3600 + minutes * 60 + seconds;
+
+  const handleStart = () => {
+    const total = getTotalTime();
+    if (total > 0) {
+      setTotalSeconds(total);
+      setIsPlaying(true);
+    }
+  };
+
+  const increase = (max, setter) => setter((prev) => (prev + 1) % max);
+  const decrease = (max, setter) => setter((prev) => (prev - 1 + max) % max);
+
+  const formatTime = (remainingTime) => {
+    const h = Math.floor(remainingTime / 3600);
+    const m = Math.floor((remainingTime % 3600) / 60);
+    const s = remainingTime % 60;
+    return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+  };
 
   return (
-    <div className="timer">
-      <CountdownCircleTimer
-        isPlaying={isPlaying}
-        duration={seconds}
-        colors={["#FF6A6A"]}
-      >
-        {({ remainingTime }) => {
-          if (remainingTime === 0) {
+    <div className="timer-container">
+      {/* Timer */}
+      <div>
+        <CountdownCircleTimer
+          key={totalSeconds}
+          isPlaying={isPlaying}
+          duration={totalSeconds}
+          colors={["#FF6A6A"]}
+          size={150}
+          strokeWidth={8}
+          onComplete={() => {
             setIsPlaying(false);
-            // alert("Time is up!");
-            return <div>Time is up!</div>;
-          } else {
-            return (
-              <>
-                <div>{Math.floor(remainingTime / 3600)} hours</div>{" "}
-                {/* 1 hour = 3600 seconds */}{" "}
-                {/* 3661 secodonds = 1 hour 1 minute 1 second */}
-                <div> {Math.floor((remainingTime % 3600) / 60)} minutes</div>
-                <div>{remainingTime % 60} seconds</div>
-              </>
-            );
-          }
-        }}
-      </CountdownCircleTimer>
+          }}
+        >
+          {({ remainingTime }) => (
+            <div style={{ fontSize: "24px", fontWeight:"600" }}>{formatTime(remainingTime)}</div>
+          )}
+        </CountdownCircleTimer>
+      </div>
 
-      <button onClick={() => setSeconds((prev) => prev + 1)}>+ Second</button>
-      <button
-        onClick={() => {
-          if (seconds > 0) {
-            setSeconds((prev) => prev - 1);
-          }
-        }}
-      >
-        - Second
-      </button>
-      <button onClick={() => setSeconds((prev) => prev + 60)}>+ Minute</button>
-      <button
-        onClick={() => {
-          if (seconds >= 60) {
-            setSeconds((prev) => prev - 60);
-          }
-        }}
-      >
-        - Minute
-      </button>
-      <button onClick={() => setSeconds((prev) => prev + 3600)}>+ Hour</button>
-      <button
-        onClick={() => {
-          if (seconds >= 3600) {
-            setSeconds((prev) => prev - 3600);
-          }
-        }}
-      >
-        - Hour
-      </button>
+      {/* Time Picker */}
+      <div className="timer-picker">
+        <div className="time-controls">
+          {[
+            { label: "Hours", value: hours, max: 24, setter: setHours },
+            { label: "Minutes", value: minutes, max: 60, setter: setMinutes },
+            { label: "Seconds", value: seconds, max: 60, setter: setSeconds }
+          ].map(({ label, value, max, setter }) => (
+            <div key={label} className="time-unit">
+              <div className="time-label">{label}</div>
+              <div className="time-arrow" onClick={() => increase(max, setter)}>▲</div>
+              <div className="time-value">{String(value).padStart(2, "0")} </div> 
+              <div className="time-arrow" onClick={() => decrease(max, setter)}>▼</div>
+            </div>
+          ))}
+        </div>
 
-      <button disabled={isPlaying} onClick={() => setIsPlaying(true)}>
-        Play
-      </button>
+        <button onClick={handleStart} className="start-button">
+          Start
+        </button>
+      </div>
     </div>
   );
-}
+};
+
+export default TimePickerTimer;
+

@@ -1,0 +1,40 @@
+.appTitle {
+    font-family: 'Single Day', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #72DB73;
+
+}
+
+.subTitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 30px;
+}
+
+.listingPage {
+    margin: 30px;
+}
+
+.movieRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+
+}
+
+.movieType {
+    font-family: 'Roboto', sans-serif;
+    color: #878787;
+    font-size: 20px;
+    list-style: 2%;
+    font-weight: 500;
+}
+
+.movieImage {
+    height: 185px;
+    object-fit: cover;
+
+}

@@ -1,5 +1,4 @@
-import "../MovieBox/MoviePage.css"
-
+import "../MovieBox/MoviePage.css";
 
 /* eslint-disable react/prop-types */
 export default function MovieBox({ data, selected, setSelected }) {
@@ -14,9 +13,17 @@ export default function MovieBox({ data, selected, setSelected }) {
     }
   };
   return (
-    <div className="movieCategory"
+    <div
+      className="movieCategory"
       onClick={handleClick}
-      style={{justifyContent:"space-between",alignItems:"center",background: data.color, textAlign: "center", borderRadius: "5px", cursor: "pointer", margin: "0",
+      style={{
+        justifyContent: "space-between",
+        alignItems: "center",
+        background: data.color,
+        textAlign: "center",
+        borderRadius: "5px",
+        cursor: "pointer",
+        margin: "0",
         border: isSelected ? "12px solid green" : "",
       }}
     >

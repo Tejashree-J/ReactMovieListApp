@@ -1,5 +1,5 @@
 .userCard {
-    width: 380px;
+    width: 450px;
     height: 260px;
     margin: 10px;
     border-radius: 20px;
@@ -11,10 +11,10 @@
 .vectorImg {
     display: flex;
     align-items: center;
+    width: 150px;
 }
 
 .vectorImg img {
-    width: 140px;
     height: 240px;
     padding: 10px;
 }
@@ -22,7 +22,6 @@
 .userDetails {
     padding: 10px;
     font-size: 18px;
-    line-height: 1.5;
     font-weight: 400;
 
 }
@@ -31,8 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-
-
+    margin-top: 20px;
 }
 
 .item {

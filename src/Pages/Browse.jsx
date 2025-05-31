@@ -1,6 +1,11 @@
+import MovieList from "../Components/MovieList/MovieList";
 
-function Browse(){
-    return <>Browse page</>
+function Browse() {
+  return (
+    <div style={{ margin: "30px"}}>
+      <MovieList />
+    </div>
+  );
 }
 
-export default Browse
+export default Browse;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Weather.css";
 import windSpeed from "../../assets/windSpeed.png";
-import humidity from "../../assets/humidity.png"
+import humidity from "../../assets/humidity.png";
 
 export default function Weather() {
   const [weather, setWeather] = useState(null);
@@ -26,19 +26,19 @@ export default function Weather() {
     updateDateTime(); // Update immediately
     const interval = setInterval(updateDateTime, 1000); // Update every second
 
-    const fetchWeather = async () => {
-      try {
-        const response = await fetch(
-          "https://api.tomorrow.io/v4/weather/forecast?location=42.3478,-71.0466&apikey=0Ezf2IDQ4U6BjgaiMzqeQmrswP3KS8C3"
-        );
-        const data = await response.json();
-        setWeather(data);
-      } catch (error) {
-        console.error("Error fetching weather data:", error);
-      }
-    };
+    // const fetchWeather = async () => {
+    //   try {
+    //     const response = await fetch(
+    //       "https://api.tomorrow.io/v4/weather/forecast?location=42.3478,-71.0466&apikey=0Ezf2IDQ4U6BjgaiMzqeQmrswP3KS8C3"
+    //     );
+    //     const data = await response.json();
+    //     setWeather(data);
+    //   } catch (error) {
+    //     console.error("Error fetching weather data:", error);
+    //   }
+    // };
 
-    fetchWeather();
+    // fetchWeather();
 
     return () => clearInterval(interval); // Cleanup the interval
   }, []);
@@ -53,10 +53,32 @@ export default function Weather() {
         </div>
         <div className="weatherData">
           {/* <p>Weather: {weather?.timelines?.daily?.[0]?.values?.weatherCodeMin || "Loading..."}</p> */}
-          <p>Temperature: {weather?.timelines?.daily?.[0]?.values?.temperatureAvg || "Loading..."}°C</p>
-          <p><img src={windSpeed} className="icon" /> {weather?.timelines?.daily?.[0]?.values?.windSpeedAvg || "Loading..."} km/h Wind</p>
-          <p><img src={humidity} className="icon"/> {weather?.timelines?.daily?.[0]?.values?.humidityAvg || "Loading..."}% Humidity</p>
-        </div>    
+          <p>
+            {" "}
+            <div>Temperature </div>{" "}
+            {weather?.timelines?.daily?.[0]?.values?.temperatureAvg ||
+              "Loading..."}
+            °C
+          </p>
+          <p>
+            <div>
+              Wind <img src={windSpeed} className="icon" />
+            </div>{" "}
+            {weather?.timelines?.daily?.[0]?.values?.windSpeedAvg ||
+              "Loading..."}{" "}
+            km/h
+          </p>
+          <p>
+            {" "}
+            <div>
+              Humidity
+              <img src={humidity} className="icon" />
+            </div>{" "}
+            {weather?.timelines?.daily?.[0]?.values?.humidityAvg ||
+              "Loading..."}{" "}
+            %{" "}
+          </p>
+        </div>
       </div>
     </>
   );
